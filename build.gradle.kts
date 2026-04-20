@@ -1,5 +1,6 @@
 plugins {
     id("java")
+    application
 }
 
 group = "edu.teamrocket"
@@ -9,6 +10,10 @@ repositories {
     mavenCentral()
 }
 
+
+application {
+    mainClass.set("edu.teamrocket.brunosbox.Brunosbox")
+}
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.10.0"))
     testImplementation("org.junit.jupiter:junit-jupiter")
