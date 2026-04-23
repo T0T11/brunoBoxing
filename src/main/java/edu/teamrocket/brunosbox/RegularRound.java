@@ -1,22 +1,35 @@
 package edu.teamrocket.brunosbox;
 
-public class RegularRound  implements Round{
-    private final String roundScore;
-    public byte redBoxerScore;
-    public byte blueBoxerScore;
+public class RegularRound implements Round {
 
-    RegularRound(String roundScore) {
-        this.roundScore = roundScore;
-        this.redBoxerScore = redBoxerScore;
-        this.blueBoxerScore = blueBoxerScore;
+    private final String roundScore;
+    private byte redBoxerScore;
+    private byte blueBoxerScore;
+
+    public RegularRound(String roundScore) {
+        this.roundScore = roundScore.replaceAll("\\s", "");
+        boxerRoundScore();
     }
 
     @Override
     public byte redBoxerScore() {
-        return this.redBoxerScore;
+        return 0;
     }
+
     @Override
     public byte blueBoxerScore() {
-        return this.blueBoxerScore;
+        return 0;
     }
-}
+
+    @Override
+    public void boxerRoundScore() {
+        String[] scores = roundScore.split("-", 2);
+        this.redBoxerScore = Byte.parseByte(scores[0]);
+        this.blueBoxerScore = Byte.parseByte(scores[1]);
+    }
+
+
+
+    }
+
+
