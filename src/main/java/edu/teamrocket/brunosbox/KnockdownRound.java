@@ -1,10 +1,10 @@
 package edu.teamrocket.brunosbox;
 
-public class KnockdownRound implements Round {
+ public class KnockdownRound implements Round {
 
-    private String roundScore;
-    public byte redBoxerScore;
-    public byte blueBoxerScore;
+     private String roundScore;
+     private byte redBoxerScore;
+     private byte blueBoxerScore;
 
 
     KnockdownRound(String roundScore) {
@@ -13,12 +13,38 @@ public class KnockdownRound implements Round {
         this.blueBoxerScore = blueBoxerScore;
     }
 
-    @Override
-    public byte redBoxerScore() {
-        return this.redBoxerScore;
-    }
-    @Override
-    public byte blueBoxerScore() {
-        return this.blueBoxerScore;
-    }
-}
+     public void boxerRoundScore() {
+
+
+         String[] parts = roundScore.split("-");
+         this.redBoxerScore = Byte.parseByte(parts[0]);
+         this.blueBoxerScore = Byte.parseByte(parts[1]);
+     }
+
+     @Override
+     public byte redBoxerScore() {
+         return 0;
+     }
+
+     @Override
+     public byte blueBoxerScore() {
+         return 0;
+     }
+
+     public byte getRedBoxerScore() {
+         return redBoxerScore;
+     }
+
+     public byte getBlueBoxerScore() {
+         return blueBoxerScore;
+     }
+
+     @Override
+     public String toString() {
+         return "KnockdownRound{" +
+                 "roundScore='" + roundScore + '\'' +
+                 ", redBoxerScore=" + redBoxerScore +
+                 ", blueBoxerScore=" + blueBoxerScore +
+                 '}';
+     }
+ }
