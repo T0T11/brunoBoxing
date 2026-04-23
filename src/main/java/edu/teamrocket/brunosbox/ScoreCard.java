@@ -4,6 +4,8 @@ public class ScoreCard {
     private String color;
     private String redCorner = "";
     private String blueCorner = "";
+    private String[] judgeScoreCard;
+    public Round[] round;
 
     ScoreCard(String color) {
         this.color = color;
@@ -11,14 +13,30 @@ public class ScoreCard {
         this.blueCorner = blueCorner;
     }
 
-    void setRedCorner(String BoxerName) {
-        this.redCorner = BoxerName;
+    public void setBlueCorner(String boxerName) {
+        this.blueCorner = boxerName;
     }
 
-    void setBlueCorner(String BoxerName) {
-        this.blueCorner = BoxerName;
+    public void setRedCorner(String boxerName) {
+        this.redCorner = boxerName;
     }
-    byte getNumsRounds(){
+
+    byte getNumRounds() {
         return 0;
     }
+
+    void loadJudgeCard(String[] judgeScoreCard)
+
+
+    int getRedBoxerFinalScore(){
+        return 0;
+    }
+
+
+    int getBluefinalScore(){
+        return 0;
+    }
+
+     String viewRounds()
+
 }
