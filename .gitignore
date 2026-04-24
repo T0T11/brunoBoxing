@@ -194,3 +194,6 @@ buildNumber.properties
 ######################
 
 uml/
+# Ignore Gradle build output directory
+build
+/.idea/
