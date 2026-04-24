@@ -1,7 +1,7 @@
 package edu.teamrocket.brunosbox;
 
 public interface Round {
-    byte redBoxerScore();
-    byte blueBoxerScore();
+    byte getRedBoxerScore();
+    byte getBlueBoxerScore();
     void boxerRoundScore();
 }

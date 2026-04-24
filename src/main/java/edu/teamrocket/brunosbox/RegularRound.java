@@ -12,12 +12,12 @@ public class RegularRound implements Round {
     }
 
     @Override
-    public byte redBoxerScore() {
+    public byte getRedBoxerScore() {
         return 0;
     }
 
     @Override
-    public byte blueBoxerScore() {
+    public byte getBlueBoxerScore() {
         return 0;
     }
 

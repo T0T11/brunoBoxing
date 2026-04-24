@@ -21,22 +21,12 @@ package edu.teamrocket.brunosbox;
          this.blueBoxerScore = Byte.parseByte(parts[1]);
      }
 
-     @Override
-     public byte redBoxerScore() {
-         return 0;
-     }
-
-     @Override
-     public byte blueBoxerScore() {
-         return 0;
-     }
-
      public byte getRedBoxerScore() {
-         return redBoxerScore;
+         return this.redBoxerScore;
      }
 
      public byte getBlueBoxerScore() {
-         return blueBoxerScore;
+         return this.blueBoxerScore;
      }
 
      @Override

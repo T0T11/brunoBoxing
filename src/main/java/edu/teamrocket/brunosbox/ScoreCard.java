@@ -25,7 +25,7 @@ public class ScoreCard {
         return 0;
     }
 
-    void loadJudgeCard(String[] judgeScoreCard)
+    void loadJudgeScoreCard(String[] judgeScoreCard){}
 
 
     int getRedBoxerFinalScore(){
@@ -37,6 +37,5 @@ public class ScoreCard {
         return 0;
     }
 
-     String viewRounds()
 
 }
