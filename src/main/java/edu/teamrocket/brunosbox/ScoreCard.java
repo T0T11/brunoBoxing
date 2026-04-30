@@ -2,6 +2,7 @@ package edu.teamrocket.brunosbox;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class ScoreCard {
     private String color;
@@ -9,6 +10,8 @@ public class ScoreCard {
     private String blueCorner = "";
     private String[] judgeScoreCard;
     public Round[] round;
+    private byte redBoxerFinalScore = 0;
+    private byte blueBoxerFinalScore = 0;
 
     private List<Round> rounds = new ArrayList<Round>();
 
@@ -41,16 +44,42 @@ public class ScoreCard {
         this.judgeScoreCard = judgeScoreCard;
     }
 
-    void loadJudgeScoreCard(String[] judgeScoreCard){}
+    void loadJudgeScoreCard(String[] judgeScoreCard){
+        this.setJudgeScoreCard(judgeScoreCard);
+
+        Optional<Round> round = Optional.empty();
+        for (String roundScore : judgeScoreCard){
+            round = Optional.ofNullable(RoundFactory.getRound(roundScore));
+            round.ifPresent(this::addRound);
+        }
+    }
 
 
     int getRedBoxerFinalScore(){
-        return 0;
+        if (this.redBoxerFinalScore == 0){
+            this.redBoxerFinalScore =
+                    this.getRounds()
+                            .stream()
+                            .map(Round::getRedBoxerScore)
+                            .map(Byte::intValue)
+                            .reduce(0, Integer::sum)
+                            .byteValue();
+        }
+        return this.redBoxerFinalScore;
     }
 
 
     int getBlueBoxerFinalScore(){
-        return 0;
+        if (this.blueBoxerFinalScore == 0){
+            this.blueBoxerFinalScore =
+                    this.getRounds()
+                            .stream()
+                            .map(Round::getBlueBoxerScore)
+                            .map(Byte::intValue)
+                            .reduce(0, Integer::sum)
+                            .byteValue();
+        }
+        return this.blueBoxerFinalScore;
     }
 
     @Override
@@ -77,6 +106,20 @@ public class ScoreCard {
         roundsView.append("""
             \tRound \t Score \t Round \t Score \t Round
             \tScore \t Total \t       \t Total \t Score""");
+        byte roundNum = 1;
+
+        for (Round round : this.rounds) {
+            roundsView.append("""
+                \n\t%s\t %s\t  %s\t %s\t %s"""
+                    .formatted(
+                            round.getRedBoxerScore(),
+                            redBoxerFinalScore += round.getRedBoxerScore(),
+                            roundNum++,
+                            blueBoxerFinalScore += round.getBlueBoxerScore(),
+                            round.getBlueBoxerScore()
+                    ));
+        }
+
         return roundsView.toString();
     }
 
