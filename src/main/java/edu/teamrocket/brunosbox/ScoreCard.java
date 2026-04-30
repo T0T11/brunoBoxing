@@ -66,10 +66,18 @@ public class ScoreCard {
                         this.blueCorner,
                         this.redCorner,
                         this.getNumRounds(),
-                        /*this.viewRounds(),*/ "",
+                        this.viewRounds(),
                         this.getRedBoxerFinalScore(),
                         this.getBlueBoxerFinalScore()
                 );
+    }
+
+    private String viewRounds(){
+        StringBuilder roundsView = new StringBuilder();
+        roundsView.append("""
+            \tRound \t Score \t Round \t Score \t Round
+            \tScore \t Total \t       \t Total \t Score""");
+        return roundsView.toString();
     }
 
 }
