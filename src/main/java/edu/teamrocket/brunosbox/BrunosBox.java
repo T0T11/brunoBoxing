@@ -126,7 +126,7 @@ public class BrunosBox {
          * Se llaman score total.
          */
 
-/*        whiteScoreCard.loadJudgeScoreCard(data[0]);
+        whiteScoreCard.loadJudgeScoreCard(data[0]);
         System.out.println(whiteScoreCard);
 
         /*
