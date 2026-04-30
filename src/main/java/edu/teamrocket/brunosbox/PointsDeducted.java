@@ -12,19 +12,25 @@ public class PointsDeducted implements Round{
     }
 
     @Override
-    public byte redBoxerScore() {
+    public byte getRedBoxerScore() {
         return this.redBoxerScore;
     }
+
     @Override
-    public byte blueBoxerScore() {
+    public byte getBlueBoxerScore() {
         return this.blueBoxerScore;
     }
 
-    private byte parseComaBlue(String score){
+    @Override
+    public void boxerRoundScore() {
+
+    }
+
+    private String parseComaBlue(String score){
         return score;
     }
 
-    private byte parseComaRed(String score){
+    private String parseComaRed(String score){
         return score;
     }
 }
