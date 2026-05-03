@@ -7,7 +7,7 @@ package edu.teamrocket.brunosbox;
      public byte blueBoxerScore;
      /*rojo izquierda azul derecha*/
 
-     KnockdownRound(String roundScore) {
+    protected KnockdownRound(String roundScore) {
 
          this.roundScore = roundScore;
          boxerRoundScore();
