@@ -23,7 +23,17 @@ public class RegularRound implements Round {
 
     @Override
     public String toString() {
-        return redBoxerScore + "-" + blueBoxerScore;
+        return getRedBoxerScore() + "-" + getBlueBoxerScore();
+    }
+
+    @Override
+    public byte getBlueBoxerScore() {
+        return this.blueBoxerScore;
+    }
+
+    @Override
+    public byte getRedBoxerScore() {
+        return this.redBoxerScore;
     }
 }
 
