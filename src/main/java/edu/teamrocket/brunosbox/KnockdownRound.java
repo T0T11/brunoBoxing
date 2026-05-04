@@ -9,7 +9,7 @@ package edu.teamrocket.brunosbox;
 
     protected KnockdownRound(String roundScore) {
 
-         this.roundScore = roundScore;
+         this.roundScore = roundScore.replaceAll("\\s", "");;
          boxerRoundScore();
     }
 
