@@ -9,7 +9,7 @@ public class RegularRound implements Round {
 
     protected RegularRound(String roundScore){
 
-        this.roundScore = roundScore;
+        this.roundScore = roundScore.replaceAll("\\s", "");;
         boxerRoundScore();
     }
 
