@@ -22,8 +22,18 @@ package edu.teamrocket.brunosbox;
      }
 
       @Override
+      public byte getBlueBoxerScore() {
+          return this.blueBoxerScore;
+      }
+
+      @Override
+      public byte getRedBoxerScore() {
+          return this.redBoxerScore;
+      }
+
+      @Override
       public String toString() {
-          return redBoxerScore + "-" + blueBoxerScore ;
+          return getRedBoxerScore() + "-" + getBlueBoxerScore() ;
 
   }
   }
